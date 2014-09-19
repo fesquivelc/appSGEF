@@ -11,4 +11,23 @@
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
+  <persistence-unit name="sgibf-postgresql-PU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>org.sge.entidades.TipoEquipo</class>
+    <class>org.sge.entidades.Equipo</class>
+    <class>org.sge.entidades.Empresa</class>
+    <class>org.sge.entidades.Almacen</class>
+    <class>org.sge.entidades.Taller</class>
+    <class>org.sge.entidades.Clinica</class>
+    <class>org.sge.entidades.Movimiento</class>
+    <class>org.sge.entidades.DetalleMovimiento</class>
+    <class>org.sge.entidades.Inventario</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/sample"/>
+      <property name="javax.persistence.jdbc.password" value="app"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.user" value="app"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
 </persistence>
