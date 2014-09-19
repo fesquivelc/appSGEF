@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings theme="CLASSIC" persistenceUnitName="sgibf-postgresql-PU" id="_14111166976821" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:ns4="http://nbmodeler.java.net" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <jpa:package>org.sge.entidades</jpa:package>
+    <jpa:entity class="TipoEquipo" minimized="false" id="_1411116847262">
+        <jpa:table name="tipo_equipo"/>
+        <jpa:attributes>
+            <jpa:id name="id" attribute-type="Long" id="_14111168765215">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+            <jpa:basic name="nombre" attribute-type="String" id="_14111169031126">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity class="Equipo" minimized="false" id="_1411117386440">
+        <jpa:attributes>
+            <jpa:id name="id" attribute-type="Long" id="_14111174054258">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="255" precision="0" scale="0"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+            </jpa:id>
+            <jpa:basic name="nombre" attribute-type="String" id="_14111174178649">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="140"/>
+            </jpa:basic>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity class="Empresa" minimized="false" id="_1411117460690">
+        <jpa:attributes>
+            <jpa:id name="ruc" attribute-type="String" id="_141111746633011">
+                <jpa:column unique="false" nullable="true" insertable="true" updatable="true" length="11" precision="0" scale="0"/>
+                <jpa:generated-value/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:diagram id="_14111166976822">
+        <plane elementRef="_14111166976821" id="_14111166976983_p">
+            <shape elementRef="_1411116847262" id="_1411116847262_gui">
+                <Bounds x="711.0" y="471.0" width="160.0" height="96.0"/>
+            </shape>
+            <shape elementRef="_1411117386440" id="_1411117386440_gui">
+                <Bounds x="495.0" y="471.0" width="136.0" height="96.0"/>
+            </shape>
+            <shape elementRef="_1411117460690" id="_1411117460690_gui">
+                <Bounds x="84.0" y="126.0" width="149.0" height="61.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
