@@ -287,24 +287,27 @@ public class EmpresaMantenimiento extends javax.swing.JInternalFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
             // TODO add your handling code here:
-            Empresa empresa = empresaControlador.getSeleccionado();
-            FormularioUtil.convertirMayusculas(this.pnlDatos);
-            BeanUtils.setProperty(empresa, "ruc", txtRUC.getText());
-            BeanUtils.setProperty(empresa, "nombre", txtNombre.getText());
+            if (FormularioUtil.dialogoConfirmar(this, accion)) {
+                Empresa empresa = empresaControlador.getSeleccionado();
+                FormularioUtil.convertirMayusculas(this.pnlDatos);
+                BeanUtils.setProperty(empresa, "ruc", txtRUC.getText());
+                BeanUtils.setProperty(empresa, "nombre", txtNombre.getText());
 
-            empresaControlador.accion(accion);
+                empresaControlador.accion(accion);
 
-            if (accion == AbstractControlador.NUEVO) {
-                lista.add(empresa);
-            } else {
-                lista.clear();
-                lista.addAll(empresaControlador.buscarTodos());
+                if (accion == AbstractControlador.NUEVO) {
+                    lista.add(empresa);
+                } else {
+                    lista.clear();
+                    lista.addAll(empresaControlador.buscarTodos());
+                }
+
+                accion = 0;
+
+                activarComponentes();
+                FormularioUtil.limpiarComponente(pnlDatos);
             }
 
-            accion = 0;
-
-            activarComponentes();
-            FormularioUtil.limpiarComponente(pnlDatos);
         } catch (IllegalAccessException | InvocationTargetException ex) {
             Logger.getLogger(EmpresaMantenimiento.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -372,7 +375,7 @@ public class EmpresaMantenimiento extends javax.swing.JInternalFrame {
             Empresa empresa = empresaControlador.getSeleccionado();
             txtRUC.setText(BeanUtils.getProperty(empresa, "ruc"));
             txtNombre.setText(BeanUtils.getProperty(empresa, "nombre"));
-            
+
         } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException ex) {
             Logger.getLogger(EmpresaMantenimiento.class.getName()).log(Level.SEVERE, null, ex);
         }
