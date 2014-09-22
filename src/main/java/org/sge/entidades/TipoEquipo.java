@@ -66,5 +66,10 @@ public  class TipoEquipo implements Serializable {
         this.equipoLista = equipoLista;
     }
 
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
 }
 

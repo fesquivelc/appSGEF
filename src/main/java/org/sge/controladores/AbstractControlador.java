@@ -60,11 +60,7 @@ public abstract class AbstractControlador<T>{
     
     public T buscarPorId(Object id){
         return this.dao.buscarPorId(id);
-    }
-    
-    public List<T> buscar(String nombre){
-        return this.dao.buscar(nombre);
-    }
+    }    
     
     public int conteo(){
         return this.dao.contar();

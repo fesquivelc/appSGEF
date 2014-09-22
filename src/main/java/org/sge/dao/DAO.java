@@ -20,7 +20,7 @@ import javax.persistence.Query;
  */
 public class DAO<T> {
 
-    private final static String PU = "sgebf-postgresql-PU";
+    private final static String PU = "postgresql-PU";
     private static EntityManager em;
     private final Class<T> clase;
     private static final Logger LOG = Logger.getLogger(DAO.class.getName());

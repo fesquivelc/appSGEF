@@ -6,12 +6,16 @@
 
 package org.sge.Main;
 
+import org.sge.controladores.AlmacenControlador;
+import org.sge.vistas.Principal;
+
 /**
  *
  * @author RyuujiMD
  */
 public class Main {
     public static void main(String[] args) {
-        
+        Principal principal = new Principal();
+        principal.setVisible(true);
     }
 }
