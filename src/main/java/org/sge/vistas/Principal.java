@@ -84,7 +84,12 @@ public class Principal extends javax.swing.JFrame {
         editMenu.setText("Mantenimientos");
 
         cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
+        cutMenuItem.setText("Mantenimiento Almacen");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
@@ -166,6 +171,12 @@ public class Principal extends javax.swing.JFrame {
         EmpresaMantenimiento empresaMantenimiento = EmpresaMantenimiento.getInstancia();
         this.agregarPanel(empresaMantenimiento);
     }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+        // TODO add your handling code here:
+        AlmacenMantenimiento almacenMantenimiento = AlmacenMantenimiento.getInstancia();
+        this.agregarPanel(almacenMantenimiento);
+    }//GEN-LAST:event_cutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments

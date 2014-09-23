@@ -113,6 +113,7 @@ public class FormularioUtil {
             LOG.info("--- EXISTE LA CARPETA DE LA IMAGEN---");
         }else{
             LOG.warning("--- NO EXISTE LA CARPETA DE LA IMAGEN---");
+            CARPETA_IMG.mkdir();
         }
         String imagen = "/"+CARPETA_IMG.listFiles().length;
         Path pOrigen = Paths.get(origen);
